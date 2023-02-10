@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
 int main()
@@ -9,7 +9,7 @@ int main()
     cout << "Podaj kwotę do wydania: ";
     cin >> numer;
     numer = numer * 100;
-    int numer2 = (int)numer;
+    int numer2 = round(numer);
     while (numer2 != 0)
     {
         for (int i = 0; i < 15; i++) 
@@ -25,13 +25,13 @@ int main()
                 {
                     if(nominal[i] >= 10)
                     {
-                    	cout<< "0," <<nominal[i] 
-                    	<<"zl"<<endl;
+                        cout<< "0," <<nominal[i] 
+                        <<"zl"<<endl;
                     }
                     else
                     {
-                    	cout<< "0,0" <<nominal[i] 
-                    	<<"zl" <<endl;
+                        cout<< "0,0" <<nominal[i] 
+                        <<"zl" <<endl;
                     }
                 }
                 i--;
