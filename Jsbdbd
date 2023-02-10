@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+#include <cmath>
+int main()
+{
+
+	double cena;
+	double pieniadze_klienta;
+	double reszta;
+	cout << "Wprowadz cene produktu ";
+	cin >> cena;
+	cout << "Ile dal klient? ";
+	cin >> pieniadze_klienta;
+	reszta = pieniadze_klienta - cena;
+	cout << "Reszta: " << reszta << endl;
+    
+	double nominaly[15] = { 500.00,200.00,100.00,50.00,20.00,10.00,5.00,2.00,1.00,0.50,0.20,0.10,0.05,0.02,0.01 };
+    
+	cout << "Wydaj reszte w nominalach: " << endl;
+    
+	for (int i = 0; i < 16; i++)
+	{
+	    
+       
+		if (reszta-nominaly[i]>=0.001)
+		{   
+            
+			reszta = reszta - nominaly[i];
+           
+			cout << nominaly[i] << endl;
+			cout<<"reszta teraz to: "<<reszta<<endl;
+
+			i = -1;
+			
+        
+		}
+
+		if (reszta <= 0.01)
+		{
+		    cout<< nominaly[i]<<endl;
+			cout << "KONIEC";
+			exit(1);
+		}
+		
+
+	}
+
+	return 0;
+}
